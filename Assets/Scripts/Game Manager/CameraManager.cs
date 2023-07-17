@@ -23,7 +23,7 @@ namespace FoodConveyor
             _gameOverCamera.Priority = 0;
         }
 
-        public override void OnGameOverHandler(GameResult result)
+        public override void OnEndHandler(GameResult result)
         {
             _menuCamera.Priority = 0;
             _playCamera.Priority = 0;

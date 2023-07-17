@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace FoodConveyor
 {
-    public enum GameMode { Menu, Play, GameOver }
+    public enum GameMode { Menu, Play, End }
     public enum GameResult { Win, Loss }
 
     public class GameManager : MonoBehaviour
@@ -13,9 +13,12 @@ namespace FoodConveyor
 
         // Fields    
         private static List<GameBehaviour> _gameBehaviourList = new List<GameBehaviour>();
+        public static event System.Action OnMenuEvent;
 
         // Properties
-        public static GameMode GetMode => _mode;
+        public static bool IsMenu => _mode == GameMode.Play;
+        public static bool IsPlay => _mode == GameMode.Play;
+        public static bool IsEnd => _mode == GameMode.Play;
 
         // Methods
         private void Start()
@@ -30,6 +33,8 @@ namespace FoodConveyor
             _mode = GameMode.Menu;
 
             foreach (GameBehaviour gameBehaviour in _gameBehaviourList) gameBehaviour.OnMenuHandler();
+
+            OnMenuEvent?.Invoke();
         }
 
         public static void StartPlay()
@@ -37,13 +42,15 @@ namespace FoodConveyor
             _mode = GameMode.Play;
 
             foreach (GameBehaviour gameBehaviour in _gameBehaviourList) gameBehaviour.OnPlayHandler();
+
+            OnMenuEvent?.Invoke();
         }
 
         public static void EndPlay(GameResult result)
         {
-            _mode = GameMode.GameOver;
+            _mode = GameMode.End;
 
-            foreach (GameBehaviour gameBehaviour in _gameBehaviourList) gameBehaviour.OnGameOverHandler(result);
+            foreach (GameBehaviour gameBehaviour in _gameBehaviourList) gameBehaviour.OnEndHandler(result);
         }
 
         public static void NextLevel()
@@ -59,7 +66,7 @@ namespace FoodConveyor
     {
         public virtual void OnMenuHandler() { }
         public virtual void OnPlayHandler() { }
-        public virtual void OnGameOverHandler(GameResult result) { }
+        public virtual void OnEndHandler(GameResult result) { }
         public virtual void OnNextLevelHandler() { }
     }
 }

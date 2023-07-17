@@ -32,6 +32,7 @@ namespace FoodConveyor
         public override void OnNextLevelHandler()
         {
             _foods.Clear();
+            _isTaskCorrect = true;
         }
 
         public static void AddFood(Food food)

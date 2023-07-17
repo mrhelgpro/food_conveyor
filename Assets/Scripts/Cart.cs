@@ -6,33 +6,31 @@ namespace FoodConveyor
     public class Cart : GameBehaviour
     {
         [SerializeField] private List<Transform> _slots = new List<Transform>();
-        [SerializeField] private List<Transform> _items = new List<Transform>();
+        [SerializeField] private List<ISlotable> _items = new List<ISlotable>();
 
         public override void OnPlayHandler()
         {
-            foreach (Transform item in _items)
+            foreach (ISlotable slotable in _items)
             {
-                Destroy(item.gameObject);
+                Destroy(slotable.GetTransform.gameObject);
             }
 
             _items.Clear();
         }
 
-        public void AddToCart(Transform item)
+        public void AddToCart(ISlotable slotable)
         {
-            item.GetComponent<Collider>().enabled = false;
-
             if (_slots.Count > _items.Count)
             {
-                _items.Add(item);
-                item.parent = _slots[_items.Count -1];
-                item.localPosition = Vector3.zero;
-                LevelManager.AddFood(item.GetComponent<Food>());
+                _items.Add(slotable);
+                slotable.AddToSlot(SlotType.Storage, _slots[_items.Count - 1]);
+
+                LevelManager.AddFood(slotable.GetTransform.GetComponent<Food>());
 
                 return;
             }
 
-            item.parent = null;
+            slotable.AddToSlot(SlotType.None, null);
         }
     }
 }

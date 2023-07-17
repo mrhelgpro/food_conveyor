@@ -16,6 +16,12 @@ namespace FoodConveyor
         [SerializeField] TextMeshProUGUI _scoreText;
         [SerializeField] TextMeshProUGUI _taskText;
 
+        private void Update()
+        {
+            _scoreText.text = LevelManager.GetCurrentAmountOfFoods.ToString();
+            _taskText.text = "Collect " + LevelManager.GetTaskAmountOfFoods + " " + LevelManager.GetTaskFoodType.ToString();
+        }
+
         public override void OnMenuHandler() 
         {
             _menuCanvas.SetActive(true);
@@ -30,7 +36,7 @@ namespace FoodConveyor
             _gameOverCanvas.SetActive(false);
         }
 
-        public override void OnGameOverHandler(GameResult result)
+        public override void OnEndHandler(GameResult result)
         {
             _menuCanvas.SetActive(false);
             _playCanvas.SetActive(false);
@@ -53,12 +59,6 @@ namespace FoodConveyor
             _menuCanvas.SetActive(false);
             _playCanvas.SetActive(false);
             _gameOverCanvas.SetActive(false);
-        }
-
-        private void Update()
-        {
-            _scoreText.text = LevelManager.GetCurrentAmountOfFoods.ToString();
-            _taskText.text = "Collect " + LevelManager.GetTaskAmountOfFoods + " " + LevelManager.GetTaskFoodType.ToString();
         }
     }
 }
