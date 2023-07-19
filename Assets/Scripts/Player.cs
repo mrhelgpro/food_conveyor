@@ -5,7 +5,7 @@ using UnityEngine.Animations.Rigging;
 
 namespace FoodConveyor
 {
-    public class Player : MonoBehaviour
+    public class Player : GameBehaviour
     {
         [SerializeField] private Animator _playerAnimator;
 
@@ -35,7 +35,7 @@ namespace FoodConveyor
 
         }
 
-        public void SetMenu()
+        public override void OnMenuHandler()
         {
             _bodyWeight = 0;
             _cartWeight = 0;
@@ -43,26 +43,21 @@ namespace FoodConveyor
             _playerAnimator.CrossFade("Menu", 0.025f);
         }
 
-        public void SetPlay()
+        public override void OnPlayHandler()
         {
             _cartWeight = 1;
 
             _playerAnimator.CrossFade("Play", 0.025f);
         }
 
-        public void SetEnd(GameResult result)
+        public override void OnEndHandler()
         {
             _bodyWeight = 0;
             _cartWeight = 0;
 
-            if (result == GameResult.Win)
-            {
-                _playerAnimator.CrossFade("Win", 0.025f);
-            }
-            else
-            {
-                _playerAnimator.CrossFade("Loss", 0.025f);
-            }
+            string animationName = GameManager.GetResult == GameResult.Win ? "Win" : "Loss";
+            
+            _playerAnimator.CrossFade(animationName, 0.025f);
         }
 
         public void AddToHand(ISlotable slotable)

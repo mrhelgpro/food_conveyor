@@ -22,11 +22,11 @@ namespace FoodConveyor
 
         public void SetPlayWindow() => SetActive(_playCanvas);
 
-        public void SetEndWindow(GameResult result)
+        public void SetEndWindow()
         {
             SetActive(_endCanvas);
 
-            if (result == GameResult.Win)
+            if (GameManager.GetResult == GameResult.Win)
             {
                 _winCanvas.SetActive(true);
                 _lossCanvas.SetActive(false);

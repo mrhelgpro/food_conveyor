@@ -567,6 +567,7 @@ Transform:
   - {fileID: 1357332748}
   - {fileID: 460715395}
   - {fileID: 899004357}
+  - {fileID: 1465314618}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1303,8 +1304,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 1593420024}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &635272720 stripped
 Transform:
@@ -1777,7 +1778,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 932879189}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FoodConveyor.GameManager, Assembly-CSharp
         m_MethodName: StartPlay
         m_Mode: 1
@@ -2160,7 +2161,6 @@ GameObject:
   - component: {fileID: 932879185}
   - component: {fileID: 932879184}
   - component: {fileID: 932879183}
-  - component: {fileID: 932879189}
   - component: {fileID: 932879188}
   m_Layer: 5
   m_Name: Game Manager
@@ -2268,10 +2268,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _task:
-    _parentTransform: {fileID: 932879186}
     _cartTransform: {fileID: 7370085107676674935}
     _scoreText: {fileID: 706458156}
     _taskText: {fileID: 847132747}
+    _parentRectTransform: {fileID: 932879186}
     _additiveEffect: {fileID: 7648601037763163779, guid: 8f919b27456fae64d991e76b58b12b39,
       type: 3}
     _additiveAnimator: {fileID: 706458158}
@@ -2281,19 +2281,6 @@ MonoBehaviour:
     _endCanvas: {fileID: 850826855}
     _winCanvas: {fileID: 1969103027}
     _lossCanvas: {fileID: 1723861158}
-  _player: {fileID: 1725567660395769191}
---- !u!114 &932879189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932879182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e68c6c6fbe527a478431e733213c96a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &938816082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,8 +3062,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1593420024}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1357332748 stripped
 Transform:
@@ -3351,13 +3338,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465314614}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.5741334, y: -3.822537, z: -7.081437}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 169459776}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1465750187
 GameObject:
@@ -3393,8 +3380,8 @@ Transform:
   - {fileID: 142367472}
   - {fileID: 1865397429}
   - {fileID: 1731163397}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1593420024}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1465750189
 MonoBehaviour:
@@ -3641,6 +3628,40 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26492f5dcfa40dc45851efb6af9c985a, type: 3}
+--- !u!1 &1593420023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1593420024}
+  m_Layer: 0
+  m_Name: Conveyor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1593420024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593420023}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1338411089}
+  - {fileID: 559665997}
+  - {fileID: 1465750188}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1605750507
 GameObject:
   m_ObjectHideFlags: 0
@@ -4372,7 +4393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1723861159}
   m_Layer: 5
-  m_Name: Defeat
+  m_Name: Loss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5365,9 +5386,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 932879189}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FoodConveyor.GameManager, Assembly-CSharp
-        m_MethodName: NextLevel
+        m_MethodName: StartPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

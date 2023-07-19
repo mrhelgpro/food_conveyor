@@ -14,10 +14,10 @@ namespace FoodConveyor
         private bool _isAllCorrect = true;
 
         // View Fields
-        [SerializeField] private RectTransform _parentTransform;
         [SerializeField] private Transform _cartTransform;
         [SerializeField] private TextMeshProUGUI _scoreText;
         [SerializeField] private TextMeshProUGUI _taskText;
+        [SerializeField] private RectTransform _parentRectTransform;
         [SerializeField] private GameObject _additiveEffect;
         [SerializeField] private Animator _additiveAnimator;
 
@@ -47,7 +47,7 @@ namespace FoodConveyor
 
             GameObject instance = GameObject.Instantiate(_additiveEffect);
             RectTransform rectInstance = instance.GetComponent<RectTransform>();
-            rectInstance.SetParent(_parentTransform);
+            rectInstance.SetParent(_parentRectTransform);
             rectInstance.anchorMin = Vector2.zero;
             rectInstance.anchorMax = Vector2.zero;
             rectInstance.anchoredPosition = screenPosition;

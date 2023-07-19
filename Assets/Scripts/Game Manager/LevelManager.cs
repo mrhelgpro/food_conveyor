@@ -7,37 +7,29 @@ namespace FoodConveyor
         // Fields Task
         [SerializeField] private TaskController _task;
         [SerializeField] private CanvasController _canvas;
-        [SerializeField] private Player _player;
+
+        // Methods
+        private void Start() => GameManager.StartMenu();
 
         public override void OnMenuHandler()
         {
             _canvas.SetMenuWindow();
-            _player.SetMenu();
         }
 
         public override void OnPlayHandler()
         {
             _task.CreateNewTask();
             _canvas.SetPlayWindow();
-            _player.SetPlay();
         }
 
-        public override void OnEndHandler(GameResult result)
+        public override void OnEndHandler()
         {
-            _canvas.SetEndWindow(result);
-            _player.SetEnd(result);
-        }
-
-        public override void OnNextLevelHandler()
-        {
-            OnPlayHandler();
+            _canvas.SetEndWindow();
         }
 
         public void AddFood(Food food)
         {
-            //_task.AddFood(food);
             _task.CreateAdditiveEffect(food);
         }
     }
 }
-

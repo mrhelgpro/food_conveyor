@@ -10,7 +10,7 @@ namespace FoodConveyor
 
         private LevelManager _levelManager;
 
-        private void Awake()
+        private void Start()
         {
             _levelManager = FindAnyObjectByType<LevelManager>();
         }
