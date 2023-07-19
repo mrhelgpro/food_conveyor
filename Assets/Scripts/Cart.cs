@@ -8,6 +8,13 @@ namespace FoodConveyor
         [SerializeField] private List<Transform> _slots = new List<Transform>();
         [SerializeField] private List<ISlotable> _items = new List<ISlotable>();
 
+        private LevelManager _levelManager;
+
+        private void Awake()
+        {
+            _levelManager = FindAnyObjectByType<LevelManager>();
+        }
+
         public override void OnPlayHandler()
         {
             foreach (ISlotable slotable in _items)
@@ -25,7 +32,7 @@ namespace FoodConveyor
                 _items.Add(slotable);
                 slotable.AddToSlot(SlotType.Storage, _slots[_items.Count - 1]);
 
-                LevelManager.AddFood(slotable.GetTransform.GetComponent<Food>());
+                _levelManager.AddFood(slotable.GetTransform.GetComponent<Food>());
 
                 return;
             }

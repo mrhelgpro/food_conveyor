@@ -1,27 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace FoodConveyor
 {
     public class MovementConstant : MonoBehaviour
     {
+        public GameMode GameMode = GameMode.Menu;
+
         public Vector3 Direction;
         public Vector3 Rotation;
 
-        private Transform _transform;
+        private Transform _thisTransform;
 
         private void Awake()
         {
-            _transform = transform;
+            _thisTransform = transform;
         }
 
-        public void Update()
+        private void Update()
         {
-            if (GameManager.IsPlay)
+            if (GameManager.GetMode == GameMode)
             {
-                _transform.position += Direction * Time.deltaTime;
-                _transform.Rotate(Rotation * Time.deltaTime);
+                float deltaTime = Time.deltaTime;
+                _thisTransform.position += Direction * deltaTime;
+                _thisTransform.Rotate(Rotation * deltaTime);
             }
         }
     }

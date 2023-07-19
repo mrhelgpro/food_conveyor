@@ -20,14 +20,49 @@ namespace FoodConveyor
         [SerializeField] private Rig _bodyRig;
         [SerializeField] private Rig _handRig;
         [SerializeField] private Rig _cartRig;
-        private float _targetWeight;
+        private float _bodyWeight;
+        private float _cartWeight;
 
         // Gameplay
         private bool _isAction = false;
 
         private void Update()
         {
-            _bodyRig.weight = Mathf.Lerp(_bodyRig.weight, _targetWeight, Time.deltaTime * 15);
+            float delta = Time.deltaTime * 10;
+
+            _bodyRig.weight = Mathf.Lerp(_bodyRig.weight, _bodyWeight, delta);
+            _cartRig.weight = Mathf.Lerp(_cartRig.weight, _cartWeight, delta);
+
+        }
+
+        public void SetMenu()
+        {
+            _bodyWeight = 0;
+            _cartWeight = 0;
+
+            _playerAnimator.CrossFade("Menu", 0.025f);
+        }
+
+        public void SetPlay()
+        {
+            _cartWeight = 1;
+
+            _playerAnimator.CrossFade("Play", 0.025f);
+        }
+
+        public void SetEnd(GameResult result)
+        {
+            _bodyWeight = 0;
+            _cartWeight = 0;
+
+            if (result == GameResult.Win)
+            {
+                _playerAnimator.CrossFade("Win", 0.025f);
+            }
+            else
+            {
+                _playerAnimator.CrossFade("Loss", 0.025f);
+            }
         }
 
         public void AddToHand(ISlotable slotable)
@@ -43,29 +78,25 @@ namespace FoodConveyor
                 float distance = Vector3.Distance(_centerPlayer.position, _targetRig.position);
 
                 _playerAnimator.CrossFade("Take", 0.025f);
-                _targetWeight = distance / 2.25f;
+                _bodyWeight = distance / 2.25f;
 
-                Invoke(nameof(TakeHoldable), 0.2f);
-                Invoke(nameof(ResetWeightRig), 0.3f);
+                // Invoke Take Food
+                Invoke(nameof(AddToSlot), 0.2f);
+                Invoke(nameof(ResetBodyWeight), 0.3f);
                 Invoke(nameof(AddToCart), 0.5f);
             }
         }
 
-        public void TakeHoldable()
-        {
-            _slotable.AddToSlot(SlotType.Hand, _handSlot);
-        }
+        // Invoke Take Food
+        private void AddToSlot() => _slotable.AddToSlot(SlotType.Hand, _handSlot);
 
-        public void AddToCart()
+        private void ResetBodyWeight() => _bodyWeight = 0;
+
+        private void AddToCart()
         {
             _cartHolder.AddToCart(_slotable);
             _slotable = null;
             _isAction = false;
-        }
-
-        public void ResetWeightRig()
-        {
-            _targetWeight = 0;
         }
     }
 }

@@ -16,6 +16,7 @@ namespace FoodConveyor
         public static event System.Action OnMenuEvent;
 
         // Properties
+        public static GameMode GetMode => _mode;
         public static bool IsMenu => _mode == GameMode.Play;
         public static bool IsPlay => _mode == GameMode.Play;
         public static bool IsEnd => _mode == GameMode.Play;

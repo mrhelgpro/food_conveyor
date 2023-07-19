@@ -54,6 +54,7 @@ namespace FoodConveyor
 
             // Instantiate
             GameObject instance = Instantiate(prefab, position, Quaternion.identity);
+            instance.transform.parent = transform;
         }
     }
 }

@@ -42,6 +42,8 @@ namespace FoodConveyor
                 if (_currentSlotType == SlotType.None)
                 {
                     _thisTransform.position += _moveDirection * Time.deltaTime;
+
+                    if (_thisTransform.position.x < -2) Destroy(gameObject);
                 }
             }
         }
