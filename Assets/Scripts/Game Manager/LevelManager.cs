@@ -11,6 +11,8 @@ namespace FoodConveyor
         // Methods
         private void Start() => GameManager.StartMenu();
 
+        public void StartPlay() => GameManager.StartPlay();
+
         public override void OnMenuHandler()
         {
             _canvas.SetMenuWindow();
