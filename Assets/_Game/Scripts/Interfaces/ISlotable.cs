@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FoodConveyor
+namespace _Game.Scripts.Interfaces
 {
     public enum SlotType { None, Hand, Storage }
 

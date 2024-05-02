@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace FoodConveyor
+namespace _Game.Scripts.Services
 {
     public enum GameMode { Menu, Play, End }
     public enum GameResult { Win, Loss }
@@ -10,13 +10,11 @@ namespace FoodConveyor
     {       
         private static GameMode _mode = GameMode.Menu;
         private static GameResult _result;
-
-        // Actions    
+        
         public static event Action OnMenuEvent;
         public static event Action OnPlayEvent;
         public static event Action OnEndEvent;
-
-        // Properties
+        
         public static GameResult GetResult => _result;
         public static GameMode GetMode => _mode;
         public static bool IsMenu => _mode == GameMode.Play;
@@ -60,8 +58,8 @@ namespace FoodConveyor
             GameManager.OnEndEvent -= OnEndHandler;
         }
 
-        public virtual void OnMenuHandler() { }
-        public virtual void OnPlayHandler() { }
-        public virtual void OnEndHandler() { }
+        protected virtual void OnMenuHandler() { }
+        protected virtual void OnPlayHandler() { }
+        protected virtual void OnEndHandler() { }
     }
 }

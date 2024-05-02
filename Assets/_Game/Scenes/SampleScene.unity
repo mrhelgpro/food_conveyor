@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a776494c238054b9bb2bf8449b2a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 763883326}
+  target: {fileID: 763883326}
 --- !u!1 &103884491
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
     FieldOfView: 32
     OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FarClipPlane: 100
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -484,61 +484,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138634985}
   m_CullTransparentMesh: 1
---- !u!1 &142367471
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 142367472}
-  - component: {fileID: 142367473}
-  m_Layer: 0
-  m_Name: Factory (0)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &142367472
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142367471}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2, y: 2, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1465750188}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &142367473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142367471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b6e6af7b7e05f248b192b41bd76d58f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefabs:
-  - {fileID: 4663840135256098889, guid: b845898b57f7b594483c67eb2db9e682, type: 3}
-  - {fileID: 8645216108941446669, guid: ce040028218acdc48bc7879feaf48615, type: 3}
-  - {fileID: 6031625439974907983, guid: 6cd2b42f24919884281f6115b06eee5b, type: 3}
-  - {fileID: 6015863327981077208, guid: d5a5e565f68e4964ab9c9c809f3b6a05, type: 3}
-  - {fileID: 4660166225079555534, guid: 221da8217f0b4dc47be0eaf28adf7478, type: 3}
-  _timer: 1
-  _xRange: {x: 0, y: 0}
-  _yRange: {x: 0, y: 0}
-  _zRange: {x: -0.4, y: 0.4}
-  _step: 0.1
 --- !u!1 &169459775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1042,7 @@ MonoBehaviour:
     FieldOfView: 20
     OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FarClipPlane: 100
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -3081,7 +3026,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1958494065}
-  - {fileID: 142367472}
   - {fileID: 1865397429}
   - {fileID: 1731163397}
   m_Father: {fileID: 1593420024}
@@ -3491,7 +3435,7 @@ MonoBehaviour:
     FieldOfView: 50
     OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FarClipPlane: 100
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -3978,17 +3922,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6e6af7b7e05f248b192b41bd76d58f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabs:
+  prefabs:
   - {fileID: 4663840135256098889, guid: b845898b57f7b594483c67eb2db9e682, type: 3}
   - {fileID: 8645216108941446669, guid: ce040028218acdc48bc7879feaf48615, type: 3}
   - {fileID: 6031625439974907983, guid: 6cd2b42f24919884281f6115b06eee5b, type: 3}
   - {fileID: 6015863327981077208, guid: d5a5e565f68e4964ab9c9c809f3b6a05, type: 3}
   - {fileID: 4660166225079555534, guid: 221da8217f0b4dc47be0eaf28adf7478, type: 3}
-  _timer: 0.75
-  _xRange: {x: 0, y: 0}
-  _yRange: {x: 0, y: 0}
-  _zRange: {x: -0.15, y: 0.15}
-  _step: 0.1
+  timer: 1
+  xRange: {x: 0, y: 0}
+  yRange: {x: 0, y: 0}
+  zRange: {x: 0, y: 0}
+  step: 0.1
 --- !u!1 &1768844551
 GameObject:
   m_ObjectHideFlags: 3
@@ -4230,7 +4174,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 32
   orthographic: 0
   orthographic size: 5
@@ -4276,9 +4220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb972bcd3465304680efbca22534768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuCamera: {fileID: 103884492}
-  _playCamera: {fileID: 677761570}
-  _gameOverCamera: {fileID: 1639239190}
+  menuCamera: {fileID: 103884492}
+  playCamera: {fileID: 677761570}
+  gameOverCamera: {fileID: 1639239190}
 --- !u!82 &1803282430
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4463,17 +4407,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6e6af7b7e05f248b192b41bd76d58f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabs:
+  prefabs:
   - {fileID: 4663840135256098889, guid: b845898b57f7b594483c67eb2db9e682, type: 3}
   - {fileID: 8645216108941446669, guid: ce040028218acdc48bc7879feaf48615, type: 3}
   - {fileID: 6031625439974907983, guid: 6cd2b42f24919884281f6115b06eee5b, type: 3}
   - {fileID: 6015863327981077208, guid: d5a5e565f68e4964ab9c9c809f3b6a05, type: 3}
   - {fileID: 4660166225079555534, guid: 221da8217f0b4dc47be0eaf28adf7478, type: 3}
-  _timer: 0.75
-  _xRange: {x: 0, y: 0}
-  _yRange: {x: 0, y: 0}
-  _zRange: {x: -0.15, y: 0.15}
-  _step: 0.1
+  timer: 1
+  xRange: {x: 0, y: 0}
+  yRange: {x: 0, y: 0}
+  zRange: {x: 0, y: 0}
+  step: 0.1
 --- !u!1 &1888535834
 GameObject:
   m_ObjectHideFlags: 0
@@ -6177,14 +6121,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8162382feb1ca0747ad21cf12fd54f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAnimator: {fileID: 4812364326267426311}
-  _handSlot: {fileID: 9190320673577731802}
-  _cartHolder: {fileID: 6377779878579094473}
-  _centerPlayer: {fileID: 2070870785}
-  _targetRig: {fileID: 58115189}
-  _bodyRig: {fileID: 1792206756}
-  _handRig: {fileID: 927033813}
-  _cartRig: {fileID: 1933874958}
+  playerAnimator: {fileID: 4812364326267426311}
+  handSlot: {fileID: 9190320673577731802}
+  cartHolder: {fileID: 6377779878579094473}
+  centerPlayer: {fileID: 2070870785}
+  targetRig: {fileID: 58115189}
+  bodyRig: {fileID: 1792206756}
+  handRig: {fileID: 927033813}
+  cartRig: {fileID: 1933874958}
 --- !u!4 &1745007664155336659
 Transform:
   m_ObjectHideFlags: 0
@@ -9317,7 +9261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b547b97182c5d7542a65e24261f7fd73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slots:
+  slots:
   - {fileID: 3157180672124528881}
   - {fileID: 452445909}
   - {fileID: 1033445254}

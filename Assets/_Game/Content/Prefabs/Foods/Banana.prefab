@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4068377934100970762}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.22787625, y: 0.6693821, z: -0.22787625, w: 0.6693821}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2374498737134346057}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 37.6, y: 90, z: 0}
 --- !u!33 &6210103235503392342
 MeshFilter:
@@ -110,6 +110,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4663840135256098889}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -117,7 +118,6 @@ Transform:
   m_Children:
   - {fileID: 2175679793074598509}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8028375934656686493
 MonoBehaviour:
@@ -131,10 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d68d626f4d6f84384bb370e795c955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
-  _handPosition: {x: -0.144, y: -0.089, z: 0.031}
-  _skinTransform: {fileID: 2175679793074598509}
-  _moveDirection: {x: -1, y: 0, z: 0}
+  foodType: 0
+  handPosition: {x: -0.144, y: -0.089, z: 0.031}
+  skinTransform: {fileID: 2175679793074598509}
+  moveDirection: {x: -1, y: 0, z: 0}
 --- !u!65 &8369634634984470478
 BoxCollider:
   m_ObjectHideFlags: 0
